@@ -382,7 +382,9 @@ class NRMSModule(AbstractRecommneder):
         preds = self._gather_step_outputs(self.training_step_outputs, "preds")
         targets = self._gather_step_outputs(self.training_step_outputs, "targets")
         cand_news_size = self._gather_step_outputs(self.training_step_outputs, "cand_news_size")
-        indexes = torch.arange(cand_news_size.shape[0]).repeat_interleave(cand_news_size)
+        indexes = torch.arange(
+            cand_news_size.shape[0], device=self.device
+        ).repeat_interleave(cand_news_size)
 
         # update metrics
         self.train_rec_metrics(preds, targets, **{"indexes": indexes})
@@ -426,7 +428,9 @@ class NRMSModule(AbstractRecommneder):
         preds = self._gather_step_outputs(self.val_step_outputs, "preds")
         targets = self._gather_step_outputs(self.val_step_outputs, "targets")
         cand_news_size = self._gather_step_outputs(self.val_step_outputs, "cand_news_size")
-        indexes = torch.arange(cand_news_size.shape[0]).repeat_interleave(cand_news_size)
+        indexes = torch.arange(
+            cand_news_size.shape[0], device=self.device
+        ).repeat_interleave(cand_news_size)
 
         # update metrics
         self.val_rec_metrics(preds, targets, **{"indexes": indexes})
@@ -484,8 +488,8 @@ class NRMSModule(AbstractRecommneder):
         cand_news_size = self._gather_step_outputs(self.test_step_outputs, "cand_news_size")
         hist_news_size = self._gather_step_outputs(self.test_step_outputs, "hist_news_size")
 
-        cand_indexes = torch.arange(cand_news_size.shape[0]).repeat_interleave(cand_news_size)
-        hist_indexes = torch.arange(hist_news_size.shape[0]).repeat_interleave(hist_news_size)
+        cand_indexes = torch.arange(cand_news_size.shape[0], device=self.device).repeat_interleave(cand_news_size)
+        hist_indexes = torch.arange(hist_news_size.shape[0], device=self.device).repeat_interleave(hist_news_size)
 
         user_ids = self._gather_step_outputs(self.test_step_outputs, "user_ids")
         cand_news_ids = self._gather_step_outputs(self.test_step_outputs, "cand_news_ids")
