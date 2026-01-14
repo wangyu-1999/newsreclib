@@ -41,7 +41,7 @@ categ_embed_dim: 300
 
 sentiment_annotator:
   _target_: newsreclib.data.components.sentiment_annotator.BERTSentimentAnnotator
-  model_name: "cardiffnlp/twitter-xlm-roberta-base-sentiment"
+  model_name: "cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual"
   tokenizer_max_len: 96
 
 train_date_split: 6

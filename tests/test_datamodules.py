@@ -53,7 +53,7 @@ def test_mind_rec_small_datamodule(batch_size):
     entity_freq_threshold = 2
     entity_conf_threshold = 0.5
     sentiment_annotator = BERTSentimentAnnotator(
-        model_name="cardiffnlp/twitter-xlm-roberta-base-sentiment", tokenizer_max_len=96
+        model_name="cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual", tokenizer_max_len=96
     )
     valid_time_split = "2019-11-14 00:00:00"
     neg_sampling_ratio = 4
@@ -155,7 +155,7 @@ def test_adressa_rec_small_datamodule(batch_size):
     word_embed_dim = 300
     categ_embed_dim = 300
     sentiment_annotator = BERTSentimentAnnotator(
-        model_name="cardiffnlp/twitter-xlm-roberta-base-sentiment", tokenizer_max_len=96
+        model_name="cardiffnlp/twitter-xlm-roberta-base-sentiment-multilingual", tokenizer_max_len=96
     )
     train_date_split = 6
     test_date_split = 7
