@@ -29,6 +29,8 @@ model:
   window_size: 3
   query_dim: 200
   dropout_probability: 0.2
+  save_recs: True
+  recs_fpath: ${paths.output_dir}/recommendations.json
 
 callbacks:
   early_stopping:
