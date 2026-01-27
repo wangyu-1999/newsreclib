@@ -31,6 +31,8 @@ model:
   dropout_probability: 0.2
   num_users: 45214
   long_short_term_method: "con" # choose between "ini" and "con"
+  save_recs: True
+  recs_fpath: ${paths.output_dir}/recommendations.json
 
 callbacks:
   early_stopping:
