@@ -43,4 +43,4 @@ logger:
     tags: ${tags}
     group: "mind"
 
-ckpt_path:~/autodl-fs/checkpoints/nrms_mindsmall_eval/best.ckpt
+ckpt_path: ~/autodl-fs/checkpoints/nrms_mindsmall_eval/best.ckpt
