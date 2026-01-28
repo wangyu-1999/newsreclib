@@ -47,4 +47,4 @@ logger:
     tags: ${tags}
     group: "mind"
 
-ckpt_path: ~/autodl-fs/data/train/runs/lsturcon_mindsmall_pretrainedemb_celoss_bertsent_s42/2026-01-28_16-23-25/checkpoints/epoch_019.ckpt
+ckpt_path: ~/autodl-fs/train/runs/lsturcon_mindsmall_pretrainedemb_celoss_bertsent_s42/2026-01-28_16-23-25/checkpoints/epoch_019.ckpt
