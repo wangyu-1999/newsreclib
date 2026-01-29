@@ -27,13 +27,13 @@ outputs:
       "preds",
       "targets",
       "cand_news_size",
-      "hist_news_size",
-      "target_categories",
-      "target_sentiments",
-      "hist_categories",
-      "hist_sentiments",
-      "user_ids",
-      "cand_news_ids",
+      # "hist_news_size",
+      # "target_categories",
+      # "target_sentiments",
+      # "hist_categories",
+      # "hist_sentiments",
+      # "user_ids",
+      # "cand_news_ids",
     ]
 
 # evaluation

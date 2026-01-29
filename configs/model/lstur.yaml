@@ -27,7 +27,7 @@ dropout_probability: 0.2
 # user encoder
 num_users: 45214
 user_masking_probability: 0.5
-long_short_term_method: "ini" # choose between "ini" and "con"
+long_short_term_method: "con" # choose between "ini" and "con"
 
 # outputs
 outputs:
@@ -38,13 +38,13 @@ outputs:
       "preds",
       "targets",
       "cand_news_size",
-      "hist_news_size",
-      "target_categories",
-      "target_sentiments",
-      "hist_categories",
-      "hist_sentiments",
-      "user_ids",
-      "cand_news_ids",
+      # "hist_news_size",
+      # "target_categories",
+      # "target_sentiments",
+      # "hist_categories",
+      # "hist_sentiments",
+      # "user_ids",
+      # "cand_news_ids",
     ]
 
 # evaluation
