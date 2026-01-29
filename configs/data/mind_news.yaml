@@ -1,7 +1,7 @@
 _target_: newsreclib.data.mind_news_datamodule.MINDNewsDataModule
 
 # dataframe settings
-dataset_size: large # choose from 'large' or 'small'
+dataset_size: small # choose from 'large' or 'small'
 # URLs for downloading the dataset
 dataset_url:
   large:
@@ -28,8 +28,8 @@ dataset_attributes:
   - "abstract_entities"
   - "category_class"
   - "subcategory_class"
-  - "sentiment_class"
-  - "sentiment_score"
+  # - "sentiment_class"
+  # - "sentiment_score"
 
 id2index_filenames:
   word2index: "word2index.tsv"
@@ -64,7 +64,7 @@ aspect: null
 
 # Datamodule parameters
 samples_per_class: 20
-batch_size: 1024
-num_workers: 8
+batch_size: 64
+num_workers: 0
 pin_memory: True
 drop_last: False
