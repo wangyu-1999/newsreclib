@@ -28,20 +28,19 @@ dropout_probability: 0.2
 outputs:
   train: ["preds", "targets", "cand_news_size"]
   val: ["preds", "targets", "cand_news_size"]
-  test: ["preds", "targets", "cand_news_size"]
-  # test:
-  #   [
-  #     "preds",
-  #     "targets",
-  #     "cand_news_size",
-  #     "hist_news_size",
-  #     "target_categories",
-  #     "target_sentiments",
-  #     "hist_categories",
-  #     "hist_sentiments",
-  #     "user_ids",
-  #     "cand_news_ids",
-  #   ]
+  test:
+    [
+      "preds",
+      "targets",
+      "cand_news_size",
+      "hist_news_size",
+      "target_categories",
+      "target_sentiments",
+      "hist_categories",
+      "hist_sentiments",
+      "user_ids",
+      "cand_news_ids",
+    ]
 
 # evaluation
 top_k_list: [5, 10]
