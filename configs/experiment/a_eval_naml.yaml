@@ -4,7 +4,7 @@
 # python train.py experiment=example
 
 defaults:
-  - override /data: mind_rec_bert_sent.yaml
+  - override /data: mind_rec.yaml
   - override /model: naml.yaml
   - override /callbacks: default.yaml
   - override /logger: many_loggers.yaml
@@ -13,15 +13,11 @@ defaults:
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters
 
-tags: ["naml", "mindsmall", "pretrainedemb", "celoss", "bertsent", "eval"]
+tags: ["naml", "mindsmall", "pretrainedemb", "celoss","eval"]
 
 seed: 42
 
-data:
-  dataset_size: "small"
-
 model:
-  use_plm: False
   pretrained_embeddings_path: ${paths.data_dir}MINDsmall_train/transformed_word_embeddings.npy
   text_embed_dim: 300
   num_heads: 15
@@ -41,8 +37,8 @@ trainer:
 
 logger:
   wandb:
-    name: "naml_mindsmall_eval"
+    name: "my_eval_naml"
     tags: ${tags}
     group: "mind"
 
-ckpt_path: ~/autodl-fs/checkpoints/naml/best.ckpt
+ckpt_path: ~/autodl-fs/train/runs/my_naml/2026-01-30_05-51-06/checkpoints/epoch_006.ckpt
