@@ -4,7 +4,7 @@
 # python train.py experiment=example
 
 defaults:
-  - override /data: mind_rec_bert_sent.yaml
+  - override /data: mind_rec.yaml
   - override /model: lstur.yaml
   - override /callbacks: default.yaml
   - override /logger: many_loggers.yaml
@@ -13,12 +13,9 @@ defaults:
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters
 
-tags: ["lsturcon", "mindsmall", "pretrainedemb", "celoss", "bertsent", "eval"]
+tags: ["lsturcon", "mindsmall", "pretrainedemb", "celoss", "eval"]
 
 seed: 42
-
-data:
-  dataset_size: "small"
 
 model:
   use_plm: False
@@ -43,8 +40,8 @@ trainer:
 
 logger:
   wandb:
-    name: "lsturcon_mindsmall_eval"
+    name: "my_eval_lsturcon"
     tags: ${tags}
     group: "mind"
 
-ckpt_path: ~/autodl-fs/train/runs/lsturcon_mindsmall_pretrainedemb_celoss_bertsent_s42/2026-01-28_16-23-25/checkpoints/epoch_019.ckpt
+ckpt_path: ~/autodl-fs/train/runs/my_lsturcon/2026-01-30_07-23-38/checkpoints/epoch_019.ckpt
